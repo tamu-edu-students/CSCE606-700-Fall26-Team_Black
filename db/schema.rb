@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_20_144235) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_20_150953) do
   create_table "bugs", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -27,7 +27,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_20_144235) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "owner_id"
+    t.index ["owner_id"], name: "index_projects_on_owner_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "bugs", "projects"
+  add_foreign_key "projects", "users", column: "owner_id"
 end
