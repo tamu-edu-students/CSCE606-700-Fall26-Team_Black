@@ -6,14 +6,13 @@
   * [Samuel Fu](mailto:jiaruifu@tamu.edu)
   * [Kiefer Crowley](mailto:jwadley@tamu.edu)
 * Phoenix
-  * [William Tyler Weber](mailto:)
+  * [William Tyler Weber](mailto:wtweber@tamu.edu)
   * [Caleb Austin](mailto:calebaustin01@tamu.edu)
 * Griffin
   * [Alana Ordonez](mailto:alordonez1@tamu.edu)
-
+  * [Lee Houchin](mailto:l_lee_houchin3@tamu.edu)
+  
 ## Project Description
-
-* [Lee Houchin](mailto:l_lee_houchin3@tamu.edu)
 **R@1D** is a bug tracking application that allows a developer team to form    \
 projects where they can post and track issues. Users in a project would be     \
 able to discuss ongoing issues, and once assigned to one or more developers,   \
