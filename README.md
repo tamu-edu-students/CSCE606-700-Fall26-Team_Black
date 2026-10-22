@@ -22,4 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-Here is a link to the [project proposal]()
+
+Here is a link to the [project proposal](project_proposal.md)
