@@ -1,5 +1,3 @@
-<link href="project_proposal.css" rel="stylesheet"></link>
-
 # R@1D
 ## Sprint Teams
 * Dragon
