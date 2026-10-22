@@ -1,28 +1,4 @@
-<style type="text/css">
-table {
-      border-collapse: collapse;
-      width: 100%;
-}
-
-thead{border: 5px solid;}
-
-tbody{border: 3px solid;}
-
-tr {border: 2px solid;}
-td,
-th {
-      border-left: 1px solid;
-      border-right: 1px solid;
-}
-
-.first_col { 
-      font-weight: bold;
-      font-style: italic;
-}
-.center_text {text-align: center;}
-.alert_color {color:#FF0000;}
-.no_borders {border: 0px solid;}
-</style>
+<link href="project_proposal.css" rel="stylesheet"></link>
 
 # R@1D
 ## Sprint Teams
