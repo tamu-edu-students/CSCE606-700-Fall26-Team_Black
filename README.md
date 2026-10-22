@@ -1,3 +1,5 @@
+_To access the project proposal, follow the [link](project_proposal.md)_
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,5 +24,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-Here is a link to the [project proposal](project_proposal.md)
