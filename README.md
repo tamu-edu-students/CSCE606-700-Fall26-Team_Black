@@ -1,26 +1,25 @@
-# README
+# R@1D
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+R@1D is a bug-tracking application for development teams.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+Install dependencies and prepare the database:
 
-* System dependencies
+```sh
+bin/setup
+```
 
-* Configuration
+Run the development server with `bin/dev`. Devise's sign-up and sign-in pages are available at `/users/sign_up` and `/users/sign_in`.
 
-* Database creation
+## Authentication
 
-* Database initialization
+Authentication uses Devise with email/password sign-in, self-service registration, password recovery, remember-me, and standard email/password validation. The generated views live in `app/views/devise` and can be customized by the team.
 
-* How to run the test suite
+Users belong to projects through `Membership` records. Each membership stores a project-specific `developer`, `manager`, or `admin` role. Memberships require a user, project, and supported role, and a user can have only one membership per project. Authorization checks are not implemented here; a policy layer such as Pundit or CanCanCan can use the membership role to decide which actions are allowed.
 
-* Services (job queues, cache servers, search engines, etc.)
+Password recovery requires Action Mailer delivery to be configured for the target environment. Development and test URL hosts are configured; set a real sender and delivery settings before relying on email in production.
 
-* Deployment instructions
+Run the test suite with `bin/rails test`.
 
-* ...
-
-Here is a link to the [project proposal](project_proposal.md)
+See the [project proposal](project_proposal.md) for planned features and requirements.
