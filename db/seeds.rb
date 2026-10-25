@@ -37,6 +37,14 @@ new_bugs = [
       status: 'open' }  
 ]
 
+new_comments = [
+    { comment: 'This bug is really annoying' },
+    { comment: 'I dont know why this is happening' },
+    { comment: 'Can someone look into this?' },
+    { comment: 'Is anyone working on this bug?' },
+    { comment: 'We should close this bug as its a duplicate.' },
+]
+
 new_users.each do |user|
     User.create!(user) if User.where(username: user[:username]).empty?
 end
@@ -63,3 +71,14 @@ new_bugs.each do |bug|
 end
 
 p Bug.all
+
+new_comments.each do |comment|
+    if Comment.where(comment: comment[:comment]).empty?
+        n_comment = Comment.new(comment)
+        n_comment.bug = Bug.all.sample
+        n_comment.user = User.all.sample
+        n_comment.save
+    end
+end
+
+p Comment.all
