@@ -35,6 +35,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_25_164654) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "project_id", null: false
+    t.string "role", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_memberships_on_project_id"
+    t.index ["user_id", "project_id"], name: "index_memberships_on_user_id_and_project_id", unique: true
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -46,13 +57,24 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_25_164654) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "name"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role", default: "user", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.check_constraint "role IN ('user', 'admin')", name: "role_check"
   end
 
   add_foreign_key "bugs", "projects"
   add_foreign_key "bugs", "users"
   add_foreign_key "comments", "bugs"
   add_foreign_key "comments", "users"
+  add_foreign_key "memberships", "projects"
+  add_foreign_key "memberships", "users"
   add_foreign_key "projects", "users", column: "owner_id"
 end

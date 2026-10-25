@@ -1,3 +1,12 @@
+# Obviously unsecure. For developement use only. 
+User.find_or_create_by!(email: "kiefercrowley@tamu.edu") do |u|
+  u.username = "Mr.Crowley"
+  u.name = "Kiefer Crowley"
+  u.password = "password123"
+  u.password_confirmation = "password123"
+  u.role = "admin"
+end
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -9,9 +18,9 @@
 #   end
 
 new_users = [
-    { username: 'bossman', name: 'I. M. Boss' },
-    { username: 'teamleader', name: 'Mike R. Manager' },
-    { username: 'bootdev', name: 'L. O. Dev'}
+    { username: 'bossman', name: 'I. M. Boss', password: 'password123', password_confirmation: 'password123', role: 'user' },
+    { username: 'teamleader', name: 'Mike R. Manager', password: 'password123', password_confirmation: 'password123', role: 'user' },
+    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user'}
 ]
 
 new_projects = [
