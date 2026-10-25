@@ -1,2 +1,21 @@
 <h1>Projects#index</h1>
 <p>Find me in app/views/projects/index.html.erb</p>
+
+<div id="projects">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Bugs</th>
+        </thead>
+        <tbody>
+            <% @projects.each do |project| %>
+            <tr>
+                <td><%= project.name %></td>
+                <td><%= project.owner.name %></td>
+                <td><%= project.bugs.count %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
