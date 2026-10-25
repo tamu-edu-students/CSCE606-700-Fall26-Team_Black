@@ -1,4 +1,6 @@
-# R@1D
+_To access the project proposal, follow the [link](project_proposal.md)_
+
+# README
 
 R@1D is a bug-tracking application for development teams.
 

@@ -4,6 +4,8 @@
 # belong in git's global ignore instead:
 # `$XDG_CONFIG_HOME/git/ignore` or `~/.config/git/ignore`
 
+# Ignore IDE required directories
+/.idea
 # Ignore bundler config.
 /.bundle
 
@@ -33,3 +35,5 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+/.bundle
+/vendor/bundle
