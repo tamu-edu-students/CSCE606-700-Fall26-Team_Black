@@ -1,61 +1,76 @@
 <div class="two_col_container">
   <div class="left_col">
-    <h2>Log in</h2>
+    <div class="log_in">
+      <h2>Log in</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <p><%= f.label :email %></p>
-        <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
-      </div>
-
-      <div class="field">
-        <p><%= f.label :password %></p>
-        <p><%= f.password_field :password, autocomplete: "current-password" %></p>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+          <p><%= f.label :email %></p>
+          <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+        </div>
+
+        <div class="field">
+          <p><%= f.label :password %></p>
+          <p><%= f.password_field :password, autocomplete: "current-password" %></p>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+          </div>
+        <% end %>
+
+        <div class="log_in_button">
+          <%= f.submit "Log in" %>
         </div>
       <% end %>
 
-      <div class="log_in">
-        <%= f.submit "Log in" %>
-      </div>
-    <% end %>
-
-    <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+      <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+    </div>
   </div>
   <div class="right_col">
-    <h2>Sign up</h2>
+    <div class="sign_up">
+      <h2>Sign up</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <p><%= f.label :email %></p>
-        <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
-      </div>
+        <div class="field">
+          <p><%= f.label :email %></p>
+          <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+        </div>
 
-      <div class="field">
-        <p><%= f.label :password %></p>
-        <% if @minimum_password_length %>
-          <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>
-        <% end %>
-        <p><%= f.password_field :password, autocomplete: "new-password" %></p>
-      </div>
+        <div class="field">
+          <p><%= f.label :password %></p>
+          <% if @minimum_password_length %>
+            <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>
+          <% end %>
+          <p><%= f.password_field :password, autocomplete: "new-password" %></p>
+        </div>
 
-      <div class="field">
-        <p><%= f.label :password_confirmation %></p>
-        <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
-      </div>
+        <div class="field">
+          <p><%= f.label :password_confirmation %></p>
+          <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+<% if notice || alert %>
+  <div class="notification">
+    <% if notice %>
+      <p class="notice" style="color: green;"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert" style="color: red;"><%= alert %></p>
+    <% end %>
+  </div>
+<% end %>
 
 <style>
   div.two_col_container {
@@ -68,18 +83,45 @@
   }
 
   div.left_col {
-    border: 1px solid black;
-    padding: 0 25px;
-    padding-bottom: 25px;
-  }
-
-  div.right_col {
-    border: 1px solid black;
-    padding: 0 25px;
-    padding-bottom: 25px;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-content: center;
+    border-right: 2px solid black;
   }
 
   div.log_in {
+    border: 1px solid black;
+    padding: 0 25px;
+    padding-bottom: 25px;
+  }
+
+  div.log_in_button {
     padding-bottom: 15px;
+  }
+
+  div.notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  div.right_col {
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-content: center;
+  }
+
+  div.sign_up {
+    border: 1px solid black;
+    padding: 0 25px;
+    padding-bottom: 25px;
   }
 </style>
