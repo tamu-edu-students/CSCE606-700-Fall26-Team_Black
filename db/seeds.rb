@@ -1,4 +1,4 @@
-# Obviously unsecure. For developement use only. 
+# Obviously unsecure. For developement use only.
 User.find_or_create_by!(email: "kiefercrowley@tamu.edu") do |u|
   u.username = "Mr.Crowley"
   u.name = "Kiefer Crowley"
@@ -20,7 +20,7 @@ end
 new_users = [
     { username: 'bossman', name: 'I. M. Boss', password: 'password123', password_confirmation: 'password123', role: 'user' },
     { username: 'teamleader', name: 'Mike R. Manager', password: 'password123', password_confirmation: 'password123', role: 'user' },
-    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user'}
+    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user' }
 ]
 
 new_projects = [
@@ -43,7 +43,7 @@ new_bugs = [
       description: 'I need to submit a bug',
       replication: 'Steps on how to replicate',
       priority: 'medium',
-      status: 'open' }  
+      status: 'open' }
 ]
 
 new_comments = [
@@ -51,7 +51,7 @@ new_comments = [
     { comment: 'I dont know why this is happening' },
     { comment: 'Can someone look into this?' },
     { comment: 'Is anyone working on this bug?' },
-    { comment: 'We should close this bug as its a duplicate.' },
+    { comment: 'We should close this bug as its a duplicate.' }
 ]
 
 new_users.each do |user|
