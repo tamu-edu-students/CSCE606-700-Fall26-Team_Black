@@ -18,9 +18,9 @@ end
 #   end
 
 new_users = [
-    { username: 'bossman', name: 'I. M. Boss', password: 'password123', password_confirmation: 'password123', role: 'user' },
-    { username: 'teamleader', name: 'Mike R. Manager', password: 'password123', password_confirmation: 'password123', role: 'user' },
-    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user' }
+    { username: 'bossman', name: 'I. M. Boss', password: 'password123', password_confirmation: 'password123', role: 'user', email: 'bossman@raid.com' },
+    { username: 'teamleader', name: 'Mike R. Manager', password: 'password123', password_confirmation: 'password123', role: 'user', email: 'leader@raid.com' },
+    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user', email: 'boot@raid.com' }
 ]
 
 new_projects = [

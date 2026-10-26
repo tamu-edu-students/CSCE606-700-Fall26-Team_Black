@@ -3,5 +3,6 @@ class DashboardController < ApplicationController
 
   def index
     # blank page
+    @projects = current_user.projects + current_user.owned_projects
   end
 end
