@@ -1,21 +1,21 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
-
 <div id="projects">
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Owner</th>
-            <th>Bugs</th>
-        </thead>
-        <tbody>
-            <% @projects.each do |project| %>
-            <tr>
-                <td><%= project.name %></td>
-                <td><%= project.owner.name %></td>
-                <td><%= project.bugs.count %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <h2>Projects</h2>
+    <% @projects.each do |project| %>
+    <hr>
+    <div>
+        <a href="/projects/<%= project.id %>">
+            <%= project.name %>
+        </a>
+        <div><%= project.owner.name %></div>
+        <div class="flex-container">
+            <div><%= project.bugs.count %> bugs.</div>
+            <div>Updated <%= distance_of_time_in_words(project.updated_at, Time.now) %> ago</div>
+        </div>
+    </div>
+    <% end %>
+    <% if @projects.empty? %>
+    <hr>
+    <div>No projects yet.</div>
+    <% end %>
+    <hr>
 </div>

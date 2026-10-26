@@ -8,3 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.flex-container {
+  display: flex;
+  gap: 10px; /* Controls the spacing between the items */
+}

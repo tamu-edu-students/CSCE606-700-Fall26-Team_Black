@@ -1,0 +1,21 @@
+<%# locals: (projects:) %>
+
+<div id="projects">
+    <h2>Projects</h2>
+    <% projects.each do |project| %>
+    <hr>
+    <div>
+        <h3><%= project.name %></h3>
+        <div><%= project.owner.name %></div>
+        <div class="flex-container">
+            <div><%= project.bugs.count %> bugs.</div>
+            <div>Updated <%= distance_of_time_in_words(project.updated_at, Time.now) %> ago</div>
+        </div>
+    </div>
+    <% end %>
+    <% if projects.empty? %>
+    <hr>
+    <div>No projects yet.</div>
+    <% end %>
+    <hr>
+</div>
