@@ -20,7 +20,7 @@ end
 new_users = [
     { username: 'bossman', name: 'I. M. Boss', password: 'password123', password_confirmation: 'password123', role: 'user' },
     { username: 'teamleader', name: 'Mike R. Manager', password: 'password123', password_confirmation: 'password123', role: 'user' },
-    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user'}
+    { username: 'bootdev', name: 'L. O. Dev', password: 'password123', password_confirmation: 'password123', role: 'user' }
 ]
 
 new_projects = [

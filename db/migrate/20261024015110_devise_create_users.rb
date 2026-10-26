@@ -43,7 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.1]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
-    
+
     add_reference :projects, :owner, index: true
     add_foreign_key :projects, :users, column: :owner_id
   end
