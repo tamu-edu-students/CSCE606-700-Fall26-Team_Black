@@ -1,3 +1,14 @@
 <h1><%= @project.name %></h1>
-
-<%= link_to "Back", projects_path %>
+<div>
+    <h2>Bugs</h2>
+    <% @project.bugs.each do |bug| %>
+    <div>
+        <h3><%= bug.title %></h2>
+        <div>submitted by <%= bug.user.name %> <%= distance_of_time_in_words(bug.created_at, Time.now) %> ago</div>
+    </div>
+    <% end %>
+    <% if @project.bugs.empty? %>
+    <div>No bugs have been submitted</div>
+    <% end %>
+</div>
+<%= link_to "Back", authenticated_root_path %>
