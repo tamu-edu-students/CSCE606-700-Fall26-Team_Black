@@ -3,11 +3,10 @@
 * Dragon
   * [Samuel Fu](mailto:jiaruifu@tamu.edu)
   * [Kiefer Crowley](mailto:jwadley@tamu.edu)
+  * [Alana Ordonez](mailto:alordonez1@tamu.edu)
 * Phoenix
   * [William Tyler Weber](mailto:wtweber@tamu.edu)
   * [Caleb Austin](mailto:calebaustin01@tamu.edu)
-* Griffin
-  * [Alana Ordonez](mailto:alordonez1@tamu.edu)
   * [Lee Houchin](mailto:l_lee_houchin3@tamu.edu)
   
 ## Project Description
