@@ -68,6 +68,25 @@ Rails.application.configure do
   #   port: 587,
   #   authentication: :plain
   # }
+  
+  # Configure email sending for production
+  # By default this may be commented or have a placeholder method.
+  # You can **replace** the existing action_mailer config, or put this after it.
+  
+  # ======= SENDGRID SMTP SETUP (Uncomment for deployment) =======
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.sendgrid.net',
+  #   port:                 587,
+  #   domain:               'your-app.herokuapp.com',
+  #   user_name:            ENV['SENDGRID_USERNAME'], # Set this in Heroku config
+  #   password:             ENV['SENDGRID_PASSWORD'], # Set this in Heroku config
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true
+  # }
+  # config.action_mailer.default_url_options = { host: 'your-app.herokuapp.com' }
+  # ==============================================================
+  
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
