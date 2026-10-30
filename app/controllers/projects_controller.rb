@@ -13,4 +13,25 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def new
+    @project = Project.new
+  end
+
+  def create
+    @project = current_user.owned_projects.build(project_params)
+    # The creator is added as an admin member so the project shows up in their project list.
+    @project.memberships.build(user: current_user, role: "admin")
+
+    if @project.save
+      redirect_to @project, notice: "Project created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name)
+  end
 end

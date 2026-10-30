@@ -3,4 +3,5 @@
 <div>
 <%= render partial: "projects/user_index", locals: { projects: @projects } %>
 </div>
+<%= link_to "New project", new_project_path %>
 <%= button_to "Log out", destroy_user_session_path, method: :delete %>

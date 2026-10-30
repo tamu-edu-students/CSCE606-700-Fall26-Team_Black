@@ -1,4 +1,24 @@
 <h1><%= @project.name %></h1>
+<% if notice %><div><%= notice %></div><% end %>
+<% if alert %><div><%= alert %></div><% end %>
+<div>
+    <h2>Members</h2>
+    <% @project.memberships.includes(:user).each do |membership| %>
+    <div class="flex-container">
+        <div><%= membership.user.name || membership.user.email %></div>
+        <div><%= membership.role %></div>
+    </div>
+    <% end %>
+    <% if @project.manageable_by?(current_user) %>
+    <%= form_with url: project_memberships_path(@project) do |form| %>
+        <div class="flex-container">
+            <%= form.email_field :email, placeholder: "Email", required: true %>
+            <%= form.select :role, Membership::ROLES %>
+            <%= form.submit "Add member" %>
+        </div>
+    <% end %>
+    <% end %>
+</div>
 <div>
     <h2>Bugs</h2>
     <% @project.bugs.each do |bug| %>
