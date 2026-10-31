@@ -24,6 +24,26 @@
   </head>
 
   <body>
+  <!-- =========================
+         START NAVBAR WITH USER ICON 
+         Place ABOVE yield so it appears on all pages 
+         ========================= -->
+    <nav style="height:60px; display:flex; align-items:center; justify-content:flex-end; background:#f8f9fa; padding:0 24px; box-shadow:0 1px 2px rgba(0,0,0,0.04);">
+      <% if user_signed_in? %>
+        <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; border:none; background:none; padding:0;">
+            <span style="font-size:1.8em; vertical-align:middle;">👤</span>
+          </summary>
+          <div style="position:absolute; right:0; background:white; border:1px solid #ccc; border-radius:4px; min-width:160px; z-index:100;">
+            <%= link_to "Edit Profile", edit_user_registration_path, style: 'display:block; padding:10px 15px; text-decoration:none; color:#333;' %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, form: { style: "margin:0; padding:0; background:none; border:none;" }, style: "background:none; border:none; color:#333; padding:10px 15px; text-align:left; width:100%;" %>
+          </div>
+        </details>
+      <% end %>
+    </nav>
+    <!-- =========================
+         END NAVBAR 
+         ========================= -->
     <%= yield %>
   </body>
 </html>
