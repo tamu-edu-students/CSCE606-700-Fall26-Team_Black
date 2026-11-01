@@ -1,11 +1,16 @@
 <div class="page">
-    <h1>R@1D</h1>
-
-    <h2><%= current_user.name %></h2>
-
-    <div>
-        <%= render partial: "projects/user_index", locals: { projects: @projects } %>
-    </div>
+  <h1>R@1D</h1>
+  
+  <h2><%= current_user.name %></h2>
+  
+  <% if notice %><div><%= notice %></div><% end %>
+  <% if alert %><div><%= alert %></div><% end %>
+  
+  <div>
+    <%= render partial: "projects/user_index", locals: { projects: @projects } %>
+  </div>
+  
+  <%= link_to "New project", new_project_path %>
 </div>
 
 <style>
