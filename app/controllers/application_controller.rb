@@ -6,6 +6,15 @@ class ApplicationController < ActionController::Base
   stale_when_importmap_changes
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) only useful if we include name in signup.
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+  end
 
   private
 

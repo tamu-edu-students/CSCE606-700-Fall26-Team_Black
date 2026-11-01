@@ -6,6 +6,13 @@ User.find_or_create_by!(email: "kiefercrowley@tamu.edu") do |u|
   u.password_confirmation = "password123"
   u.role = "admin"
 end
+User.find_or_create_by!(email: "jiaruifu@tamu.edu") do |u|
+  u.username = "f_testing"
+  u.name = "Oops I forgot my password"
+  u.password = "password123"
+  u.password_confirmation = "password123"
+  u.role = "user"
+end
 
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
