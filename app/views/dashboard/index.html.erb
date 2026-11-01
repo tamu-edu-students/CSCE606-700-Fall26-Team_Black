@@ -1,5 +1,7 @@
 <h1>R@1D</h1>
 <h2><%= current_user.name %></h2>
+<% if notice %><div><%= notice %></div><% end %>
+<% if alert %><div><%= alert %></div><% end %>
 <div>
 <%= render partial: "projects/user_index", locals: { projects: @projects } %>
 </div>

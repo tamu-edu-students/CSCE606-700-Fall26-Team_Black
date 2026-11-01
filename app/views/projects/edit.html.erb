@@ -1,0 +1,12 @@
+<h1>Rename Project</h1>
+<%= form_with model: @project do |form| %>
+    <% @project.errors.full_messages.each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+    <%= form.submit "Save" %>
+<% end %>
+<%= link_to "Back", @project %>

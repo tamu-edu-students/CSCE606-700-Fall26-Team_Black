@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       root to: "devise/sessions#new", as: :unauthenticated_root
     end
   end
-  resources :projects, only: [ :index, :show, :new, :create ] do
+  resources :projects do
     resources :memberships, only: [ :create ]
   end
 end

@@ -22,6 +22,6 @@ Users belong to projects through `Membership` records. Each membership stores a 
 
 Password recovery requires Action Mailer delivery to be configured for the target environment. Development and test URL hosts are configured; set a real sender and delivery settings before relying on email in production.
 
-Run the test suite with `bin/rails test`.
+Run the specs with `bundle exec rspec` and the features with `bundle exec cucumber`.
 
 See the [project proposal](project_proposal.md) for planned features and requirements.

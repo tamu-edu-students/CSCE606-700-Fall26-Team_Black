@@ -1,6 +1,15 @@
 <h1><%= @project.name %></h1>
 <% if notice %><div><%= notice %></div><% end %>
 <% if alert %><div><%= alert %></div><% end %>
+<div class="flex-container">
+    <% if @project.manageable_by?(current_user) %>
+    <%= link_to "Rename", edit_project_path(@project) %>
+    <% end %>
+    <% if @project.deletable_by?(current_user) %>
+    <%= button_to "Delete project", @project, method: :delete,
+          form: { data: { turbo_confirm: "Delete #{@project.name} and all of its bugs? This can't be undone." } } %>
+    <% end %>
+</div>
 <div>
     <h2>Members</h2>
     <% @project.memberships.includes(:user).each do |membership| %>
@@ -23,7 +32,11 @@
     <h2>Bugs</h2>
     <% @project.bugs.each do |bug| %>
     <div>
-        <h3><%= bug.title %></h2>
+        <h3><%= bug.title %></h3>
+        <div class="flex-container">
+            <div>Status: <%= bug.status.presence || "unknown" %></div>
+            <div>Priority: <%= bug.priority.presence || "none" %></div>
+        </div>
         <div>submitted by <%= bug.user.name %> <%= distance_of_time_in_words(bug.created_at, Time.now) %> ago</div>
     </div>
     <% end %>
