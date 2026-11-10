@@ -9,36 +9,36 @@ Feature: Creating projects
   Scenario: Creating a bug
     Given I am an "developer" on a project named "Project"
     When I visit the project "Project"
-    When I create a bug named "New Bug"
+    When I create a bug named "New Bug" with description "Something", replication "Steps", priority "urgent", and status "open"
     Then I should see "Bug created."
     And I should see "New Bug"
 
   Scenario: Creating a bug without a name
     Given I am an "developer" on a project named "Project"
     When I visit the project "Project"
-    When I create a bug named ""
+    When I create a bug named "" with description "Something", replication "Steps", priority "urgent", and status "open"
     Then I should see "Name can't be blank"
 
   Scenario: Creating a bug without a description
     Given I am an "developer" on a project named "Project"
     When I visit the project "Project"
-    When I create a bug with description ""
+    When I create a bug named "New Bug" with description "", replication "Steps", priority "urgent", and status "open"
     Then I should see "Description can't be blank"
 
   Scenario: Creating a bug without replication steps
     Given I am an "developer" on a project named "Project"
     When I visit the project "Project"
-    When I create a bug with replication ""
+    When I create a bug named "New Bug" with description "Something", replication "", priority "urgent", and status "open"
     Then I should see "Replication can't be blank"
 
   Scenario: Creating a bug without a priority
     Given I am an "developer" on a project named "Project"
     When I visit the project "Project"
-    When I create a bug with priority ""
+    When I create a bug named "New Bug" with description "Something", replication "Steps", priority "", and status "open"
     Then I should see "Priority can't be blank"
 
  Scenario: Creating a bug without a status
     Given I am an "developer" on a project named "Project"
     When I visit the project "Project"
-    When I create a bug with status ""
+    When I create a bug named "New Bug" with description "Something", replication "Steps", priority "urgent", and status ""
     Then I should see "Status can't be blank"
