@@ -10,3 +10,8 @@ Feature: Editing bugs
     Given I am an "admin" on a project named "Project"
     When I change the status of the bug "New Bug" from "open" to "closed"
     Then I should see "Status changed."
+
+  Scenario: Changing a bugs priority
+    Given I am an "admin" on a project named "Project"
+    When I change the priority of the bug "New Bug" from "urgent" to "routine"
+    Then I should see "Priority changed."

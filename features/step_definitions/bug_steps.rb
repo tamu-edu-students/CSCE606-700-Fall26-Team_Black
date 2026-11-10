@@ -12,3 +12,7 @@ end
 When('I change the status of the bug {string} from {string} to {string}') do |string, string2, string3|
   pending # Write code here that turns the phrase above into concrete actions
 end
+
+When('I change the priority of the bug {string} from {string} to {string}') do |string, string2, string3|
+  pending # Write code here that turns the phrase above into concrete actions
+end
