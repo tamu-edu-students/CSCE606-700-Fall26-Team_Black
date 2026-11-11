@@ -3,7 +3,7 @@
 * Dragon
   * [Samuel Fu](mailto:jiaruifu@tamu.edu)
   * [Kiefer Crowley](mailto:jwadley@tamu.edu)
-  * -- Alana Ordonez --
+  * <s>Alana Ordonez</s>
 * Phoenix
   * [William Tyler Weber](mailto:wtweber@tamu.edu)
   * [Caleb Austin](mailto:calebaustin01@tamu.edu)
