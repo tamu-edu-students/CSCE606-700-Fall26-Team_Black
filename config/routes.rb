@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :projects do
     resources :memberships, only: [ :create ]
   end
+
+  resources :bugs
 end

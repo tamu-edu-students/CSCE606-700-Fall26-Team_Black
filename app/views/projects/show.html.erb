@@ -32,7 +32,7 @@
     <h2>Bugs</h2>
     <% @project.bugs.each do |bug| %>
     <div>
-        <h3><%= bug.title %></h3>
+        <h3><%= link_to bug.title, bug %></h3>
         <div class="flex-container">
             <div>Status: <%= bug.status.presence || "unknown" %></div>
             <div>Priority: <%= bug.priority.presence || "none" %></div>
