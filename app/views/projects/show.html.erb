@@ -13,9 +13,19 @@
 <div>
     <h2>Members</h2>
     <% @project.memberships.includes(:user).each do |membership| %>
-    <div class="flex-container">
+    <div class="flex-container" id="<%= dom_id(membership) %>">
         <div><%= membership.user.name || membership.user.email %></div>
         <div><%= membership.role %></div>
+        <% if @project.manageable_by?(current_user) && membership.user_id != @project.owner_id %>
+        <%= form_with url: project_membership_path(@project, membership), method: :patch do |form| %>
+            <%= form.select :role, Membership::ROLES, { selected: membership.role }, id: dom_id(membership, :role) %>
+            <%= form.submit "Update role" %>
+        <% end %>
+        <% end %>
+        <% if membership.user_id == current_user.id && !@project.deletable_by?(current_user) %>
+        <%= button_to "Leave project", project_membership_path(@project, membership), method: :delete,
+              form: { data: { turbo_confirm: "Leave #{@project.name}?" } } %>
+        <% end %>
     </div>
     <% end %>
     <% if @project.manageable_by?(current_user) %>
