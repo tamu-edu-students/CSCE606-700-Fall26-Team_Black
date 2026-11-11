@@ -30,6 +30,7 @@
 </div>
 <div>
     <h2>Bugs</h2>
+    <%= link_to "New bug", new_bug_path %>
     <% @project.bugs.each do |bug| %>
     <div>
         <h3><%= link_to bug.title, bug %></h3>
