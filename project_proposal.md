@@ -109,7 +109,7 @@ for your end product.
         <td class="first_col center_text">4</td>
         <td>As an administrator, I want to create a project and invite members with roles so that my team has a shared workspace.</td>
         <td class="center_text">Essential</td> 
-        <td class="center_text">Team Phoenix</td>
+        <td class="center_text">Phoenix</td>
       </tr>
       <tr> 
         <td class="first_col center_text">5</td>
