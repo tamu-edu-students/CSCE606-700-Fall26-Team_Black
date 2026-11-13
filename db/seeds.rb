@@ -54,11 +54,11 @@ new_bugs = [
 ]
 
 new_comments = [
-    { comment: 'This bug is really annoying' },
-    { comment: 'I dont know why this is happening' },
-    { comment: 'Can someone look into this?' },
-    { comment: 'Is anyone working on this bug?' },
-    { comment: 'We should close this bug as its a duplicate.' }
+    { comment: 'This bug is really annoying', created_at: Time.utc(2026, 11, 1, 9, 0) },
+    { comment: 'I dont know why this is happening', created_at: Time.utc(2026, 11, 1, 10, 0) },
+    { comment: 'Can someone look into this?', created_at: Time.utc(2026, 11, 1, 11, 0) },
+    { comment: 'Is anyone working on this bug?', created_at: Time.utc(2026, 11, 1, 12, 0) },
+    { comment: 'We should close this bug as its a duplicate.', created_at: Time.utc(2026, 11, 1, 13, 0) }
 ]
 
 new_users.each do |user|
@@ -88,13 +88,14 @@ end
 
 p Bug.all
 
-new_comments.each do |comment|
-    if Comment.where(comment: comment[:comment]).empty?
-        n_comment = Comment.new(comment)
-        n_comment.bug = Bug.all.sample
-        n_comment.user = User.all.sample
-        n_comment.save
-    end
+bug = Bug.find_by!(title: 'Nothing Works')
+
+new_comments.each do |comment_attributes|
+    n_comment = Comment.find_or_initialize_by(comment: comment_attributes[:comment])
+    n_comment.bug = bug
+    n_comment.user ||= User.all.sample
+    n_comment.created_at = comment_attributes[:created_at]
+    n_comment.save!
 end
 
 p Comment.all
