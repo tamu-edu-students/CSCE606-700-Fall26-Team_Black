@@ -16,5 +16,8 @@ Rails.application.routes.draw do
     resources :memberships, only: [ :create ]
   end
 
-  resources :bugs
+  resources :bugs do
+    resources :comments, only: [:create]
+  end
+
 end

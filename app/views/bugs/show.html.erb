@@ -1,3 +1,11 @@
-<h1><%= @bug.title %></h1>
+<h1> <%= @bug.title %> </h1>
+
+<%= form_with(model: [ @bug, Comment.new ], local: true) do |f| %>
+  <div class="field">
+    <%= f.label :body, "Add a comment" %>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit "Post Comment" %>
+<% end %>
 
 <%= link_to "Back", @bug.project %>
