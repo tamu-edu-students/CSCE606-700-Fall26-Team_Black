@@ -1,5 +1,14 @@
 <h1> <%= @bug.title %> </h1>
 
+<section id="comments">
+  <h2>Comments (<%= @comments.size %>)</h2>
+  <% if @comments.any? %>
+    <%= render partial: "comments/comment", collection: @comments %>
+  <% else %>
+    <p>No comments yet.</p>
+  <% end %>
+</section>
+
 <%= form_with(model: [ @bug, Comment.new ], local: true) do |f| %>
   <div class="field">
     <%= f.label :body, "Add a comment" %>

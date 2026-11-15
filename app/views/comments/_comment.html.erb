@@ -1,0 +1,10 @@
+<div class="comment" id="<%= dom_id(comment) %>">
+    <div class="flex-container">
+        <strong><%= comment.user.name.presence || comment.user.email %></strong>
+        <time datetime="<%= comment.created_at.iso8601 %>">
+            <%= comment.created_at.strftime("%b %-d, %Y %-l:%M %p") %>
+            (<%= time_ago_in_words(comment.created_at) %> ago)
+        </time>
+    </div>
+    <p><%= comment.comment %></p>
+</div>
