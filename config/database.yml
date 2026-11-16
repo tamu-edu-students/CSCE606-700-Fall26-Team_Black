@@ -31,4 +31,12 @@ production:
   cable:
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
+    adapter: postgresql
+    encoding: unicode
     migrations_paths: db/cable_migrate
+  queue:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
+    adapter: postgresql
+    encoding: unicode
+    migrations_paths: db/queue_migrate
