@@ -120,14 +120,14 @@ for your end product.
         <td class="first_col center_text">5</td>
         <td>As a team member, I want to discuss a bug in a comment thread and see its change history so that decisions are recorded.</td>
         <td class="center_text">Essential</td> 
-        <td class="center_text first_col alert_color">Phoenix</td>
+        <td class="center_text first_col alert_color">Dragon</td>
         <td class="center_text">In progress</td>
       </tr>
       <tr>
       <td class="first_col center_text">6</td>
         <td>As a developer, I want a clear error when I submit a bug missing required fields so that reports are always actionable.</td>
         <td class="center_text">Error-Handling</td> 
-        <td class="center_text first_col alert_color">Dragon</td>
+        <td class="center_text first_col alert_color">Phoenix</td>
         <td class="center_text">In progress</td>
       </tr>
       <tr>
