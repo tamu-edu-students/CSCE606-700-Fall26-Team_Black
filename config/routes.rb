@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :projects do
     resources :memberships, only: [ :create ]
+    resources :bugs
   end
 
-  resources :bugs
 end

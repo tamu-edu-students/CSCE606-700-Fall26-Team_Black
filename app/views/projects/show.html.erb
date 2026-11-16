@@ -30,10 +30,10 @@
 </div>
 <div>
     <h2>Bugs</h2>
-    <%= link_to "New bug", new_bug_path %>
+    <%= link_to "New bug", new_project_bug_path(@project) %>
     <% @project.bugs.each do |bug| %>
     <div>
-        <h3><%= link_to bug.title, bug %></h3>
+        <h3><%= link_to bug.title, project_bug_path(@project, bug) %></h3>
         <div class="flex-container">
             <div>Status: <%= bug.status.presence || "unknown" %></div>
             <div>Priority: <%= bug.priority.presence || "none" %></div>
