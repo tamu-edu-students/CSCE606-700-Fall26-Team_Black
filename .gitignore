@@ -6,6 +6,10 @@
 
 # Ignore IDE required directories
 /.idea
+/.idea/*
+# Ignore personal foldes
+/otherdocs/*
+
 # Ignore bundler config.
 /.bundle
 

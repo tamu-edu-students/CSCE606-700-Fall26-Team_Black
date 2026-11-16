@@ -84,6 +84,7 @@ for your end product.
         <th class="center_text">Description</th>
         <th class="center_text">Importance</th>
         <th class="center_text">Team Assigned</th> 
+        <th class="center_text">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -92,48 +93,56 @@ for your end product.
         <td>As a new user, I want to sign up and sign in as a developer so that I can post and discuss bugs with my team.</td>
         <td class="center_text">Essential</td>
         <td class="center_text">Dragon</td>
+        <td class="center_text">In progress</td>
       </tr>
       <tr>
         <td class="first_col center_text">2</td>
         <td >As a developer, I want to report a bug with a description, priority, type, and steps to replicate so that others can reproduce it.</td>
         <td class="center_text">Essential</td> 
-        <td class="center_text first_col alert_color">Dragon</td>
+        <td class="center_text first_col alert_color">Phoenix</td>
+        <td class="center_text">In progress</td>
       </tr>
       <tr> 
         <td class="first_col center_text">3</td>
         <td>As a developer, I want to move my assigned bug through allowed statuses so that the team sees progress.</td>
         <td class="center_text">Essential</td> 
-        <td class="center_text first_col alert_color">Phoenix</td>
+        <td class="center_text first_col alert_color">Dragon</td>
+        <td class="center_text">In progress</td>
       </tr>
       <tr>
         <td class="first_col center_text">4</td>
         <td>As an administrator, I want to create a project and invite members with roles so that my team has a shared workspace.</td>
         <td class="center_text">Essential</td> 
         <td class="center_text">Phoenix</td>
+        <td class="center_text">In progress</td>
       </tr>
       <tr> 
         <td class="first_col center_text">5</td>
         <td>As a team member, I want to discuss a bug in a comment thread and see its change history so that decisions are recorded.</td>
         <td class="center_text">Essential</td> 
         <td class="center_text first_col alert_color">Phoenix</td>
+        <td class="center_text">In progress</td>
       </tr>
       <tr>
       <td class="first_col center_text">6</td>
         <td>As a developer, I want a clear error when I submit a bug missing required fields so that reports are always actionable.</td>
         <td class="center_text">Error-Handling</td> 
         <td class="center_text first_col alert_color">Dragon</td>
+        <td class="center_text">In progress</td>
       </tr>
       <tr>
         <td class="first_col center_text">7</td>
         <td>As a developer, I want to attach screenshots or logs to a bug report so that the others have the supporting evidence.</td>
         <td class="center_text">Stretch</td> 
         <td class="center_text first_col alert_color">Unassigned</td>
+        <td class="center_text">Backlogged</td>
       </tr>
       <tr>
         <td class="first_col center_text">8</td>
         <td>As a user, I want to sign in with my Google or Apple account so that I do not need to manage another password.</td>
         <td class="center_text">Stretch</td> 
         <td class="center_text first_col alert_color">Unassigned</td>
+        <td class="center_text">Backlogged</td>
       </tr>
     </tbody>
 </table>
@@ -142,35 +151,73 @@ for your end product.
 
 ### Project
 
-* Owner
-  * user
-  * role
-  * bugs
-* Bug Report
-  * ID
-  * Title
-  * Description
-  * Replication
-  * Priority
-  * Submitted by
-  * Status
-  * Assigned to
-  * Comments
-* Comment
-  * User
-  * Comment
-  * Bug report ID
-* Status
-  * Current status
-  * Date
-  * Changed by
-* Assignment
-  * Assigned to user
-  * Date 
-  * Assigned by
-* User 
-  * Username
-  * Name
+<table>
+  <tr>
+    <td>Owner</td>
+    <td>
+      <ul>
+        <li>user</li>
+        <li>role</li>
+        <li>bugs</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Bug Report</td>
+    <td>
+      <ul>
+        <li>ID</li>
+        <li>Title</li>
+        <li>Description</li>
+        <li>Replication</li>
+        <li>Priority</li>
+        <li>Submitted by</li>
+        <li>Status</li>
+        <li>Assigned to</li>
+        <li>Comments</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Comment</td>
+    <td>
+      <ul>
+        <li>User</li>
+        <li>Comment</li>
+        Bug report ID</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td>
+      <ul>
+        <li>Current status</li>
+        <li>Date</li>
+        <li>Changed by</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Assignment</td>
+    <td>
+      <ul>
+        <li>Assigned to user</li>
+        <li>Date</li>
+        <li>Assigned by</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>User</td>
+    <td>
+      <ul>
+        <li>Username</li>
+        <li>Name</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## Authentication and Authorization Plan
 
