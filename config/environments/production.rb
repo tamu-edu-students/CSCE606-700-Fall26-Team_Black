@@ -74,6 +74,19 @@ Rails.application.configure do
   # You can **replace** the existing action_mailer config, or put this after it.
 
   # ======= SENDGRID SMTP SETUP (Uncomment for deployment) =======
+  # ======= SENDGRID SMTP SETUP (For Heroku deployment) =======
+  # To enable email sending in production:
+  # 1. Add the SendGrid add-on to your Heroku app (in CLI):
+  #    heroku addons:create sendgrid:starter
+  #    (You can also add it via the Heroku dashboard > Resources tab)
+  #
+  # 2. Heroku will automatically set SENDGRID_USERNAME and SENDGRID_PASSWORD as environment variables.
+  #    You can view/edit these in the Heroku dashboard under: Settings > Config Vars.
+  #
+  # 3. Uncomment this block.
+  # 4. Update 'your-app.herokuapp.com' to match the app's actual Heroku domain.
+  # Note: the 'starter' plan should be free for us.
+  # ===========================================================
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = {
   #   address:              'smtp.sendgrid.net',
