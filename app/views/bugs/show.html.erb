@@ -12,7 +12,7 @@
 <%= form_with(model: [ @bug, Comment.new ], local: true) do |f| %>
   <div class="field">
     <%= f.label :body, "Add a comment" %>
-    <%= f.text_area :body %>
+    <%= f.text_area :comment %>
   </div>
   <%= f.submit "Post Comment" %>
 <% end %>

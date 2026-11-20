@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    @bug = Bug.find(params[:id])
+    @bug = Bug.find(params[:bug_id])
     @comment = @bug.comments.build(comment_params)
     @comment.user = current_user
 
@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:comment)
   end
 
 end
