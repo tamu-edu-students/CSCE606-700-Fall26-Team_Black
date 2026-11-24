@@ -58,7 +58,6 @@ group :development, :test do
   gem "factory_bot_rails", "~> 6.5"
 
   gem "rubycritic", require: false
-
 end
 
 group :development do
@@ -73,5 +72,5 @@ group :test do
   gem "cucumber-rails", "~> 4.1", require: false
   gem "database_cleaner-active_record", "~> 2.2"
   gem "simplecov", require: false
-  # gem "simplecov", require: false #rubocop complained about having this specified twice
+
 end
